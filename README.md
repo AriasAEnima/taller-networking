@@ -26,7 +26,7 @@ Java JDK 1.8, Maven y Git.
 
 Se debe ejecutar en la carpeta que queremos que esté
 ```
-> git clone https://github.com/AriasAEnima/taller-networking.gitt
+> git clone https://github.com/AriasAEnima/taller-networking.git
 ```
 ### Instalación
 
