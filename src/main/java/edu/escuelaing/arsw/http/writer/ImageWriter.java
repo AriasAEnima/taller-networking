@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arsw.http.reader;
+package edu.escuelaing.arsw.http.writer;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -17,12 +17,16 @@ import java.net.Socket;
  */
 public class ImageWriter implements ResourceWriter{
     private String type;
-
+    
     public ImageWriter(String type) {
         this.type = type;
     }    
     
-
+    /**
+     * Escribe bits de una imagen utilizando el socket del cliente.
+     * @param file path del archivo
+     * @param clientSocket para responder
+     */
     @Override
     public void write(String file,Socket clientSocket) {
          try {
@@ -45,7 +49,7 @@ public class ImageWriter implements ResourceWriter{
 
     @Override
     public String exactType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "image/"+type;
     }
 
    

@@ -17,12 +17,11 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class EchoClientSquare {
-    public static void main(String[] args) throws IOException {
 
+    public static void main(String[] args) throws IOException {
         Socket echoSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
-
         try {
             echoSocket = new Socket("127.0.0.1", 35000);
             out = new PrintWriter(echoSocket.getOutputStream(), true);
@@ -36,7 +35,6 @@ public class EchoClientSquare {
                     + "the connection to: localhost.");
             System.exit(1);
         }
-
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         String userInput;
 

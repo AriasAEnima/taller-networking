@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arsw.http.reader;
+package edu.escuelaing.arsw.http.writer;
 
 
 import java.util.Arrays;
@@ -15,6 +15,7 @@ import java.util.Map;
  * @author J. Eduardo Arias
  */
 public class ResourceChooser {
+    // Permite a partir de un string devolver un Writer
     public static Map<String,ResourceWriter> selector=new HashMap<String,ResourceWriter>(){{
             put("html",new TextWriter("html"));
             put("png",new ImageWriter("png"));
@@ -24,11 +25,17 @@ public class ResourceChooser {
         }
     };      
     
+    /**
+     * A partir de un string devuelve un Writer
+     * @param path el path del recurso web
+     * @return Devuelve el ResourceWriter para el tipo de archivo especifico.
+     * @throws Exception si el path no esta bien formado o si no es un archivo
+     */
     public static ResourceWriter choose(String path) throws Exception{
         String resource="";
         try{                   
             String[] s=path.split("\\.");    
-            resource=s[s.length-1];            
+            resource=s[s.length-1];           // Existen archivos como owl.min.js  
         }catch(ArrayIndexOutOfBoundsException e){
             throw new Exception(" No es una peticion de Recurso Especifico/ Peticion mal formada");
         }        

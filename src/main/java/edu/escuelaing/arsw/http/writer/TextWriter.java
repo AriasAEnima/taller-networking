@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arsw.http.reader;
+package edu.escuelaing.arsw.http.writer;
 
-import edu.escuelaing.arsw.http.reader.ResourceWriter;
+import edu.escuelaing.arsw.http.writer.ResourceWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,8 +23,13 @@ public class TextWriter implements ResourceWriter{
         this.type = type;
     }    
     
-    
-     public void write(String file, Socket clientSocket) {
+    /**
+     * Escribe un archivo de texto utilizando el socket del cliente
+     * @param file Debe ser el path del archivo relativo a resources (raiz)
+     * @param clientSocket para responderle
+     */
+    @Override
+    public void write(String file, Socket clientSocket) {
         String outputLine="";
         try {            
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);

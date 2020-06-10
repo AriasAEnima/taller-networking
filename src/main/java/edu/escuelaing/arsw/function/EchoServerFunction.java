@@ -19,18 +19,24 @@ import java.util.Map;
  * @author J. Eduardo Arias
  */
 public class EchoServerFunction {
-        
+    // Define las funciones y permite asignarlas con un simple string    
     private static Map<String,TFunction> selector=new HashMap<String,TFunction>(){{
         put("cos",(a)->Math.cos(a));
         put("sen",(a)->Math.sin(a));
         put("tan",(a)->Math.tan(a));
         }
     };      
-    
+    // Define la forma de las funciones trigonometricas.s
     public interface TFunction{
         double operate(double n);
     }
     
+    /**
+     * Le responde a un socket de cliente operaciones sen, cos y tan 
+     * de un numero ingresado
+     * @param args ninguno
+     * @throws IOException si algo ocurre con los sockets
+     */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {

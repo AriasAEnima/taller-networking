@@ -17,6 +17,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class EchoServerSquare {
+     /**
+     * Le responde al socket del cliente el cuadrado de un numero ingresado
+     * @param args ninguno
+     * @throws IOException si no falla la utilizacion de sockets
+     */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {

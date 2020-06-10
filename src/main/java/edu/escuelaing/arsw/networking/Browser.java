@@ -16,6 +16,12 @@ import java.net.URL;
  * @author J. Eduardo Arias
  */
 public class Browser {
+    /**
+     * Guarda el html de una URL en un archivo resultado.html, si no le ingresan
+     * parametros lee la de google.com
+     * @param args Url de la pagina
+     * @throws Exception si ocurre un error con los sockets
+     */
     public static void main(String[] args) throws Exception {
         URL google;       
         if (args.length==0 || args[0]==""){
