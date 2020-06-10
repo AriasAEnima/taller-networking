@@ -1,6 +1,6 @@
 # Taller Networking
 
-Es una implementación simple de un web server utilizando sockets, actualmente puede "servir" archivos de Imagenes y Texto (png, jpg, css, js, html).
+Son ejercicios con sockets en java terminando con una implementación simple de un web server utilizando sockets, actualmente puede "servir" archivos de Imagenes y Texto (png, jpg, css, js, html).
 
 ## Autor
 
@@ -9,10 +9,10 @@ Es una implementación simple de un web server utilizando sockets, actualmente p
 
 ## Rendimiento LOC/h
 
-1. Desde las 11:00 , hasta las 20:00 (con un receso de 1 hr)  fueron aprox 350 lineas
-1. Desde las 10:00 , hasta las 12:00 
+1. Desde las 11:00 , hasta las 20:00 (con un receso de 1 hr)  fueron aprox 300 lineas
+2. Desde las 10:00 , hasta las 13:00 fueron aprox 50 lineas
 
-LOC=33 LOC/h
+LOC=21 LOC/h
 
 ### Prerrequisitos
 
@@ -97,7 +97,7 @@ java -cp target/Taller-Networking-1.0-SNAPSHOT.jar edu.escuelaing.arsw.http.Echo
 
 ![Modelo](imagenes/modelo.PNG)
 
-Podríamos decir que un acercamiento a un patron de fabrica simplificado, donde quien toma tiene la inteligencia de escoger (y retornar) el writer concreto es <ResourceChooser> utilice un map para utilizarlo como si fuera un switch en el código.
+Podríamos decir que un acercamiento a un patron de fabrica simplificado, donde quien tiene la inteligencia de escoger (y retornar) el writer concreto es <ResourceChooser> utilice un map para utilizarlo como si fuera un switch en el código.
 
 Aqui vemos los archivos soportados y sus equivalencias en Writers:
 
